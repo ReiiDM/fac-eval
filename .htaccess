@@ -1,0 +1,33 @@
+# ============================================================
+# Granby Colleges Faculty Evaluation System
+# ============================================================
+
+# Prevent directory listing
+Options -Indexes
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Protect sensitive files
+<FilesMatch "\.(sql|md|json|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect .kiro directory
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.kiro/ - [F,L]
+    RewriteRule ^database/ - [F,L]
+</IfModule>
+
+# Error pages
+ErrorDocument 403 /fac-eval/includes/403.php
+ErrorDocument 404 /fac-eval/includes/404.php
+
+# PHP settings (if allowed)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 5M
+    php_value post_max_size 10M
+    php_value max_execution_time 60
+</IfModule>

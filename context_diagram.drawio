@@ -1,0 +1,158 @@
+<mxfile host="app.diagrams.net" modified="2026-05-18T00:00:00.000Z" agent="Kiro" version="21.0.0" type="device">
+  <diagram id="context-diagram" name="Context Diagram">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Central Process: Faculty Evaluation System -->
+        <mxCell id="2" value="Faculty Evaluation&#xa;System&#xa;&#xa;(Granby Colleges of&#xa;Science and Technology)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;verticalAlign=middle;spacingTop=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="420" width="280" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- External Entity: Superadmin -->
+        <mxCell id="3" value="Superadmin" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="160" y="140" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- External Entity: Admin -->
+        <mxCell id="4" value="Admin&#xa;(Department Level)" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="140" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- External Entity: Faculty -->
+        <mxCell id="5" value="Faculty" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="160" y="740" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- External Entity: Student -->
+        <mxCell id="6" value="Student" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="740" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- External Entity: MySQL Database -->
+        <mxCell id="7" value="MySQL Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="680" y="740" width="120" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============ DATA FLOWS ============ -->
+
+        <!-- Superadmin → System -->
+        <mxCell id="10" value="Departments, Academic Years,&#xa;Semesters, Admin Accounts,&#xa;System Settings, Score Ranges" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=0.1;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" source="3" target="2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- System → Superadmin -->
+        <mxCell id="11" value="System-wide Reports,&#xa;Department Averages,&#xa;Top/Bottom Faculty,&#xa;Notifications" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.3;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;dashed=1;" edge="1" source="2" target="3" parent="1">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="656" y="380" />
+              <mxPoint x="400" y="380" />
+              <mxPoint x="400" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Admin → System -->
+        <mxCell id="12" value="Courses, Subjects, Sections,&#xa;Faculty Accounts, Assignments,&#xa;QR Codes, Enrollment,&#xa;Evaluation Forms &amp; Periods" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.8;entryY=0.1;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" source="4" target="2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- System → Admin -->
+        <mxCell id="13" value="Registration Requests,&#xa;Evaluation Results,&#xa;Department Reports (CSV/PDF),&#xa;Notifications" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.7;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;dashed=1;" edge="1" source="2" target="4" parent="1">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="824" y="380" />
+              <mxPoint x="1040" y="380" />
+              <mxPoint x="1040" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Faculty → System -->
+        <mxCell id="14" value="Login Credentials,&#xa;Profile Updates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.2;entryY=0.9;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" source="5" target="2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- System → Faculty -->
+        <mxCell id="15" value="Evaluation Scores,&#xa;Category Breakdown,&#xa;Anonymous Comments,&#xa;Performance Trends,&#xa;Notifications" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;dashed=1;" edge="1" source="2" target="5" parent="1">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="684" y="660" />
+              <mxPoint x="400" y="660" />
+              <mxPoint x="400" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Student → System -->
+        <mxCell id="16" value="Registration Data,&#xa;Evaluation Ratings (1-5 stars),&#xa;Comments, Login Credentials" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.8;entryY=0.9;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" source="6" target="2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- System → Student -->
+        <mxCell id="17" value="Pending Evaluations List,&#xa;Enrolled Subjects,&#xa;Evaluation History,&#xa;Account Credentials,&#xa;Notifications" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;dashed=1;" edge="1" source="2" target="6" parent="1">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="796" y="660" />
+              <mxPoint x="1040" y="660" />
+              <mxPoint x="1040" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- System → Database -->
+        <mxCell id="18" value="Store/Retrieve Data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;" edge="1" source="2" target="7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="20" value="Context Diagram (Level 0 DFD)&#xa;Granby Colleges Faculty Evaluation System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="40" width="560" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="30" value="Legend" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="920" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="970" as="sourcePoint" />
+            <mxPoint x="120" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="32" value="Data flow (input to system)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="955" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="" style="endArrow=classic;html=1;fontSize=10;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="1000" as="sourcePoint" />
+            <mxPoint x="120" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="34" value="Data flow (output from system)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="985" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1025" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="External Entity" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1055" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="Process (System)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1050" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1085" width="30" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="Data Store" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1080" width="120" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
